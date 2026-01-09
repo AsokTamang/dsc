@@ -11,3 +11,9 @@ earning_per_share = [9,15,0,6]
 #here in the code below, we are returning the actual ration only if the value of e is not 0 otherwise we are returning the value of ratio as -1
 pe_ratio = [round(p/e,2) if e!=0 else -1 for p,e in zip(price,earning_per_share)] #here we are rounding off the ratio into .2 decimals
 print(pe_ratio)
+
+
+prices = [120,99,150,80,200]
+prices_after_discount = [(price-0.15*price) if price > 100 else price for price in prices]  #here we are giving 15% discount on prices if the price is greater than 100 else the price will remain original
+
+print(prices_after_discount)
