@@ -48,3 +48,23 @@ electronics = [product['product_name'] for product in products if product['categ
 Apparel = [product['product_name'] for product in products if product['category']=='Apparel']
 Home_Appliances = [product['product_name'] for product in products if product['category']=='Home Appliances']
 Literature = [product['product_name'] for product in products if product['category']=='Literature']
+
+
+#data extraction
+concert_a_attendees = {"Alice", "Bob", "Charlie", "Diana"}
+concert_b_attendees = {"Bob", "Diana", "Eve", "Frank"}
+concert_c_attendees = {"Alice", "George", "Elle", "Frank","Bob"}
+#unique in concert A
+concert_A = [person for person in concert_a_attendees if
+             person not in concert_b_attendees and person not in concert_c_attendees]
+#unique in concert B
+concert_B = [person for person in concert_b_attendees if
+             person not in concert_a_attendees and person not in concert_c_attendees]
+#unique in concert C
+concert_C = [person for person in concert_c_attendees if
+             person not in concert_a_attendees and person not in concert_b_attendees]
+#common among all the concerts
+common = concert_a_attendees & concert_b_attendees & concert_c_attendees  # common among every concerts
+
+
+
