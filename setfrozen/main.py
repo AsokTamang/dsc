@@ -70,3 +70,7 @@ common = concert_a_attendees & concert_b_attendees & concert_c_attendees  # comm
 #identifying the maximum temperatures
 daily_temperatures = [68, 71, 74, 69, 70, 71, 68, 73, 72, 71, 70, 74, 72, 68]
 filtered_temperature = [temp for temp in daily_temperatures if temp>70]
+
+#identifyin unique temperatures
+uniques={temp for temp in filtered_temperature}
+print(uniques)
