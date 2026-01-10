@@ -67,4 +67,6 @@ concert_C = [person for person in concert_c_attendees if
 common = concert_a_attendees & concert_b_attendees & concert_c_attendees  # common among every concerts
 
 
-
+#identifying the maximum temperatures
+daily_temperatures = [68, 71, 74, 69, 70, 71, 68, 73, 72, 71, 70, 74, 72, 68]
+filtered_temperature = [temp for temp in daily_temperatures if temp>70]
