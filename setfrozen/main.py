@@ -96,3 +96,10 @@ print(popular_posts)
 a = {char for post in popular_posts for char in post.split(' ') if char.startswith('#')}
 print(a)
 #extracting all the unique hashtags
+
+
+# Hashtag Frequency Analysis
+# write your code here
+total_count ={tag:sum(tag in post for post in popular_posts)  for tag in a }
+print(total_count)
+
