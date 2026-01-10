@@ -74,3 +74,19 @@ filtered_temperature = [temp for temp in daily_temperatures if temp>70]
 #identifyin unique temperatures
 uniques={temp for temp in filtered_temperature}
 print(uniques)
+
+#Temperature Frequency Analysis
+temperature_frequency = {temp:filtered_temperature.count(temp) for temp in uniques} #counting the temperature in the unique list
+print(temperature_frequency)
+
+#Social Media Engagement Analysis
+posts = [
+    {"content": "Loving the sunny weather today! #sunny #happy", "likes": 120},
+    {"content": "Nothing beats a beach day. #beachday #sunny", "likes": 350},
+    {"content": "A rainy day at home. #rainy #lazyday", "likes": 75},
+    {"content": "Best coffee in town. #coffeelove #morning", "likes": 180},
+    {"content": "Can't wait for the weekend. #weekend #party", "likes": 90}
+]
+# write your code here
+popular_posts = [post['content'] for post in posts if post['likes'] > 100]
+print(popular_posts)
