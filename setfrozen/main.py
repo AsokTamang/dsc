@@ -90,3 +90,9 @@ posts = [
 # write your code here
 popular_posts = [post['content'] for post in posts if post['likes'] > 100]
 print(popular_posts)
+
+
+#Unique Hashtag Extraction
+a = {char for post in popular_posts for char in post.split(' ') if char.startswith('#')}
+print(a)
+#extracting all the unique hashtags
