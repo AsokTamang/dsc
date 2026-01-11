@@ -90,7 +90,9 @@ with open("C:/Users/ashok/OneDrive/Desktop/change.txt",'w') as f:
 
 with open("C:/Users/ashok/Downloads/Assignment_JSON_Generators_Decorators/Assignment_JSON_Generators_Decorators/sales_data.json") as f:
      sales_data =  json.load(f)
-     total_sales_category = {main_data['category']:sum(data['quantity'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
-     print(total_sales_category) #counting the total number of quantities in each category
-
-
+     total_quantity_category = {main_data['category']:sum(data['quantity'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
+     print(total_quantity_category) #counting the total number of quantities in each category
+     total_sales_category = {main_data['category']:sum(data['quantity'] * data['price_per_unit'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
+     with open('aggregated_sales.json', 'w') as g:
+       json.dump(total_sales_category, g, indent=4)
+     print(total_sales_category)
