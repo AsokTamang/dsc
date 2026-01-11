@@ -88,4 +88,8 @@ with open("C:/Users/ashok/OneDrive/Desktop/change.txt",'w') as f:
 #json.load() reading json data from a file in python dict
 #json.loads()  reading json string data as python dict
 
+with open("C:/Users/ashok/Downloads/Assignment_JSON_Generators_Decorators/Assignment_JSON_Generators_Decorators/sales_data.json") as f:
+     sales_data =  json.load(f)
+     print(sales_data)
+
 
