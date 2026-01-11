@@ -93,6 +93,21 @@ with open("C:/Users/ashok/Downloads/Assignment_JSON_Generators_Decorators/Assign
      total_quantity_category = {main_data['category']:sum(data['quantity'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
      print(total_quantity_category) #counting the total number of quantities in each category
      total_sales_category = {main_data['category']:sum(data['quantity'] * data['price_per_unit'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
-     with open('aggregated_sales.json', 'w') as g:
+     with open('C:/Users/ashok/OneDrive/Desktop/aggregated_sales.json', 'w') as g:
        json.dump(total_sales_category, g, indent=4)
      print(total_sales_category)
+
+def read_and_filter_temperatures(filename , threshold):
+     with open(filename,'r') as file:
+         for line in file:
+             line=line.strip().split(',')
+             sensor_name=line[0]
+             temp = line[-1]
+             if float(temp) > threshold:
+                 yield f'{sensor_name} with temperature {temp} needs immediate action'
+rf_temperature = read_and_filter_temperatures("C:/Users/ashok/Downloads/Assignment_JSON_Generators_Decorators/Assignment_JSON_Generators_Decorators/sensor_data.txt" , 10)
+for data in rf_temperature:
+ print(next(rf_temperature))
+
+
+
