@@ -90,6 +90,7 @@ with open("C:/Users/ashok/OneDrive/Desktop/change.txt",'w') as f:
 
 with open("C:/Users/ashok/Downloads/Assignment_JSON_Generators_Decorators/Assignment_JSON_Generators_Decorators/sales_data.json") as f:
      sales_data =  json.load(f)
-     print(sales_data)
+     total_sales_category = {main_data['category']:sum(data['quantity'] for data in sales_data if data['category'] == main_data['category']) for main_data in sales_data}
+     print(total_sales_category) #counting the total number of quantities in each category
 
 
