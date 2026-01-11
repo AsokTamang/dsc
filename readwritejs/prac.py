@@ -1,4 +1,8 @@
 import json
+#json.load() is used for reading the json data from a file in the python dict format
+#json.loads() is used for reading the json data which is in string format into python dict
+#json.dump() is used for writing the python dict as json data to a file
+#json.dumps() is used for converting the python dict into json string
 random_data = {
   "users": [
     {
@@ -32,6 +36,8 @@ random_data = {
     "founded": 2018
   }
 }
+
+print(json.dumps(random_data,indent = 4))  #here json.dumps() is used to convert the python dict into json string
 
 json_string = '''
 {
@@ -76,3 +82,8 @@ print(a)
 with open("C:/Users/ashok/OneDrive/Desktop/change.txt",'w') as f:
     json.dump(random_data,f,indent = 4 )  #here we are writing the JSON data in the given file using json.dump()
     print('json data converted and written into change.txt file')
+
+#json.dump() writing python dict into a file as json
+#json.dumps()  converting python dict into json data string
+#json.load() reading json data from a file in python dict
+#json.loads()  reading json string data as python dict
