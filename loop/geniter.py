@@ -7,7 +7,7 @@ class Controller:
         if self.index >= len(self.data):   #if the index value becomes greater than the length of the data then we raise the exception
             raise StopIteration
         return self.data[self.index]
-    def __iter__(self):
+    def __iter__(self):  #here the __iter__ method is used for representing that the current object is iterable
         return self
 c=Controller()
 for data in c:
