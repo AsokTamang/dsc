@@ -87,3 +87,5 @@ with open("C:/Users/ashok/OneDrive/Desktop/change.txt",'w') as f:
 #json.dumps()  converting python dict into json data string
 #json.load() reading json data from a file in python dict
 #json.loads()  reading json string data as python dict
+
+
